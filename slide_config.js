@@ -1,8 +1,9 @@
 var SLIDE_CONFIG = {
   // Slide settings
   settings: {
-    title: 'Title Goes Here<br>Up To Two Lines',
-    subtitle: 'Subtitle Goes Here',
+    title: 'Ruby On Rails 4',
+    subtitle: "Don't repeat yourself",
+    place: "JOINEA!",
     //eventInfo: {
     //  title: 'Google I/O',
     //  date: '6/x/2013'
@@ -12,7 +13,7 @@ var SLIDE_CONFIG = {
     enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
     enableTouch: true, // Default: true. If touch support should enabled. Note: the device must support touch.
     //analytics: 'UA-XXXXXXXX-1', // TODO: Using this breaks GA for some reason (probably requirejs). Update your tracking code in template.html instead.
-    favIcon: 'images/google_developers_logo_tiny.png',
+    favIcon: 'images/favicon.ico',
     fonts: [
       'Open Sans:regular,semibold,italic,italicsemibold',
       'Source Code Pro'
@@ -22,19 +23,19 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Firstname Lastname',
-    company: 'Job Title<br>Google',
+    name: 'Carlos Mathiasen(matts)',
+    company: 'Developer',
     gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
-  }/*, {
-    name: 'Second Name',
-    company: 'Job Title, Google',
-    gplus: 'http://plus.google.com/1234567890',
-    twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
-  }*/]
+    twitter: '@reese987',
+    www: '',
+    github: 'http://github.com/matt987'
+  }, {
+    name: 'Leois Linka',
+    company: 'Developer',
+    gplus: '',
+    twitter: '',
+    www: '',
+    github: ''
+  }]
 };
 

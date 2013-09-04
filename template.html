@@ -26,14 +26,8 @@ URL: https://code.google.com/p/io-2012-slides
 
 <slides class="layout-widescreen">
 
-  <slide class="logoslide nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo.png"></span>
-    </article>
-  </slide>
-
   <slide class="title-slide segue nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
+    <aside class="gdbar"><img src="images/rails.png"></aside>
     <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
     <hgroup class="auto-fadein">
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
@@ -44,54 +38,374 @@ URL: https://code.google.com/p/io-2012-slides
 
   <slide>
     <hgroup>
-      <h2>Slide with Bullets</h2>
+      <h2>Getting Started</h2>
+      <h3>Philosophy</h3>
     </hgroup>
     <article>
-      <ul>
-        <li>Titles are formatted as Open Sans with bold applied and font size is set at 45</li>
-        <li>Title capitalization is title case
-          <ul>
-            <li>Subtitle capitalization is title case</li>
-          </ul>
-        </li>
-        <li>Subtitle capitalization is title case</li>
-        <li>Titles and subtitles should never have a period at the end</li>
-      </ul>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Bullets that Build</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <p>A list where items build:</p>
+      <p><b>What's Rails:</b></p>
       <ul class="build">
-        <li>Pressing 'h' highlights code snippets</li>
-        <li>Pressing 'p' toggles speaker notes (if they're on the current slide)</li>
-        <li>Pressing 'f' toggles fullscreen viewing</li>
-        <li>Pressing 'w' toggles widescreen</li>
-        <li>Pressing 'o' toggles overview mode</li>
-        <li>Pressing 'ESC' toggles off these goodies</li>
-      </ul>
-      <p>Another list, but items fade as they build:</p>
-      <ul class="build fade">
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
-        <li>Hover over me!</li>
+        <li>Rails is a web application development framework.</li>
+        <li>Written on Ruby language.</li>
+        <li>It is designed to make programming web applications easier.</li>
+        <li>Experienced Rails developers also report that it makes web application development more fun.</li>
+        <li>It makes the assumption that there is the "best" way to do things.</li>
+        <li>David Heinemeier Hansson</li>
       </ul>
     </article>
   </slide>
 
   <slide>
     <hgroup>
-      <h2>Slide with (Smaller Font)</h2>
+      <h2>Getting Started</h2>
+      <h3>Philosophy</h3>
+    </hgroup>
+    <article>
+      <p><b>Two major guiding principles:</b></p>
+      <ul class="build">
+        <li>
+          <p><b>DRY - "Don't Repeat Yourself":</b></p>
+          <p>Suggests that writing the same code over and over again is a bad thing.</p>
+        </li>
+        <li>
+          <p><b>Convention Over Configuration:</b></p>
+          <p>Means that Rails makes assumptions about what you want to do and how you're going to do it,rather than requiring you to specify every little thing through endless configuration files.</p>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
     </hgroup>
     <article class="smaller">
       <ul>
-        <li>All <a href="http://google.com">links</a> open in new tabs.</li>
-        <li>To change that this, add <code>target="_self"</code> to the link.</li>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Creating a new Rails Project</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Generators:</b></p>
+      <ul class="build">
+        <li>Rails comes with a number of scripts called <b>GENERATORS</b> that are designed to <b>make your development life easier</b> by creating everything that's necessary to start working on a particular task.</li>
+      </ul>
+      <p><b>Generators: New</b></p>
+      <ul class="build">
+        <li>
+          <pre class="prettyprint" data-lang="console">
+$ rails new blog
+          </pre>
+        </li>
+        <li>
+          <p>
+            The rails new blog command we ran above created a folder in your working directory called blog.
+          </p>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Starting the server: </b></p>
+      <ul class="build">
+        <li>
+          <pre class="prettyprint" data-lang="console">
+$ rails server
+          </pre>
+        </li>
+        <li>
+          <p>
+            This will fire up WEBrick, a webserver built into Ruby by default. To see your application in action, open a browser window and navigate to <a href="http://localhost:3000">http://localhost:3000.</a>
+          </p>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Fatal Error: </b></p>
+      <ul class="build">
+        <li>
+          <p>
+            Compiling CoffeeScript to JavaScript requires a JavaScript runtime and the absence of a runtime will give you an execjs error. Usually Mac OS X and Windows come with a JavaScript runtime installed
+          </p>
+        </li>
+      </ul>
+      <p><b>Add this to Gemfile </b></p>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+gem 'execjs'
+gem 'therubyracer'
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>What do we need?: </b></p>
+      <ul class="build">
+        <li>
+          <p>To get Rails saying "Hello", you need to create at minimum a <i>controller</i> and a <i>view</i>.</p>
+        </li>
+      </ul>
+      <p><b>Concepts: </b></p>
+      <ul class="build">
+        <li>
+          <p>
+            <b>Controllers:</b>
+          </p>
+          A controller's purpose is to receive specific requests for the application.
+        </li>
+        <li>
+          <p>
+            <b>Routing:</b>
+          </p>
+          Decides which controller receives which requests.
+        </li>
+        <li>
+          <p>
+            <b>Views:</b>
+          </p>
+          A view's purpose is to display this information in a human readable format.
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Creating our first controller: </b></p>
+      <ul class="build">
+        <li>
+          <p>To create a new controller, you will need to run the "controller" generator and tell it you want a controller called "welcome" with an action called "index".</p>
+          <p>Rails will create several files and a route for you.</p>
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="console">
+$ rails generate controller welcome index
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Editing HTML &amp; routes.rb: </b></p>
+      <ul class="build">
+        <li>
+          <p><b>/views/welcome/index.html.erb</b></p>
+           <pre class="prettyprint" data-lang="html">
+&lt;h1>Hello, JOINEA!&lt;/h1>
+          </pre>
+        </li>
+        <li>
+          <p><b>config/routes.rb</b></p>
+           <pre class="prettyprint" data-lang="ruby">
+root to: "welcome#index"
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Can you create your first own action?: </b></p>
+      <ul class="build">
+        <li>
+          You should create a method on WelcomeController called <b>joinea</b>
+        </li>
+        <li>
+          You should create the route for <b>joinea</b> action
+        </li>
+        <li>
+          You should create the view for <b>joinea</b> action
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Resources: </b></p>
+      <ul class="build">
+        <li>
+            A resource is the term used for a collection of similar objects, such as posts, people or animals. You can <b>CRUD</b> items for a resource.
+        </li>
+      </ul>
+      <p><b>Routes: </b></p>
+      <ul class="build">
+        <li><b>config/routes.rb</b>
+           <pre class="prettyprint" data-lang="ruby">
+resources :posts
+          </pre>
+        </li>
+      </ul>
+      <p><b>Rake: </b></p>
+      <ul class="build">
+        <li>
+          Rake is a software task management tool. It allows you to specify tasks and describe dependencies.
+           <pre class="prettyprint" data-lang="console">
+$ rake routes
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+        <li><a href="http://guides.rubyonrails.org/routing.html#resources-on-the-web">Resources</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Rake_(software)">Rake</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Go to new post page </b></p>
+      <ul class="build">
+        <li><a href="http://localhost:3000/posts/new">http://localhost:3000/posts/new</a></li>
+        <li>
+          <b>Got an error</b>
+           <pre class="prettyprint" data-lang="error">
+Routing error
+          </pre>
+        </li>
+        <li><h2>Why?</h2></li>
+      </ul>
+
+    </article>
+  </slide>
+
+  <slide class="fill nobackground" style="background-image: url(images/enfado.jpg)">
+    <hgroup>
+      <h2 class="white" style="text-align: right">Full Image (with Optional Header)</h2>
+    </hgroup>
+    <p>DRY</p>
+    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
+  </slide>
+
+
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
       </ul>
     </article>
   </slide>
@@ -340,7 +654,7 @@ function helloWorld(world) {
     </hgroup>
   </slide>
 
-  <slide class="fill nobackground" style="background-image: url(images/sky.jpg)">
+  <slide class="fill nobackground" style="background-image: url(images/enfadado.jpg)">
     <hgroup>
       <h2 class="white">Full Image (with Optional Header)</h2>
     </hgroup>
