@@ -388,6 +388,379 @@ Routing error
     </article>
   </slide>
 
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Because you don't have a controller</b></p>
+      <ul class="build">
+        <li>
+          <b>To create it, run: </b>
+           <pre class="prettyprint" data-lang="console">
+$ rake g controller posts
+          </pre>
+        </li>
+        <li>
+          <b>You need to create a method called new </b>
+           <pre class="prettyprint" data-lang="ruby">
+def new
+end
+          </pre>
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="html">
+&lt;h1>New Post&lt;/h1>
+          </pre>
+        </li>
+      </ul>      
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>The first form</b></p>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="erb">
+&lt;%= form_for :post do |f| %>
+  &lt;p>
+    &lt;%= f.label :title %>&lt;br>
+    &lt;%= f.text_field :title %>
+  &lt;/p>
+  &lt;p>
+    &lt;%= f.label :text %>&lt;br>
+    &lt;%= f.text_area :text %>
+  &lt;/p>
+  &lt;p>
+    &lt;%= f.submit %>
+  &lt;/p>
+&lt;% end %>
+          </pre>
+        </li>
+      </ul>      
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>form_for: </b></p>
+      <ul class="build">
+        <li>
+            When you call form_for, you pass it an identifying object for this form. In this case, it's the symbol :post. This tells the form_for helper what this form is for.
+        </li>
+        <li>
+            Inside the block for this method, the FormBuilder object — represented by f — is used to build two labels and two text fields, one each for the title and text of a post. 
+        </li>
+        <li>
+            Finally, a call to submit on the f object will create a submit button for the form.
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>inspect element: </b></p>
+      <ul class="build">
+        <li>
+            If you inspect the HTML that is generated, by viewing the source of the page, you will see that the action attribute for the form is pointing at <b>/posts/new</b>.
+        </li>
+        <li>
+            Edit the form_for line inside app/views/posts/new.html.erb to look like this:
+        </li>
+        <li>
+            The form needs to use a different URL in order to go somewhere else. This can be done quite simply with the :url option of form_for.
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="erb">
+&lt;%= form_for :post, url: posts_path do |f| %>
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Creating "create" method: </b></p>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+def create
+  render text: params[:post].inspect
+end
+          </pre>
+        </li>
+      </ul>
+      <p><b>It rendered: </b></p>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+{"title"=>"First post!", "text"=>"This is my first post."}
+          </pre>          
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Creating a model: </b></p>
+      <ul class="build">
+        <li>
+            Models in Rails use a singular name, and their corresponding database tables use a plural name. Rails provides a generator for creating models, which most Rails developers tend to use when creating new models.
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="console">
+$ rails generate model Post title:string text:text
+          </pre>
+        </li>
+        <li>
+            Active Record is smart enough to automatically map column names to model attributes, which means you don't have to declare attributes inside Rails models, as that will be done automatically by Active Record.
+        </li>
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+        <li><a href="http://guides.rubyonrails.org/routing.html#resources-on-the-web">Resources</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Rake_(software)">Rake</a></li>
+        <li><a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Running a migration: </b>
+      <ul class="build">
+        <li>
+            Migrations are Ruby classes that are designed to make it simple to create and modify database tables.
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+class CreatePosts < ActiveRecord::Migration
+  def change
+    create_table :posts do |t|
+      t.string :title; t.text :text; t.timestamps
+    end
+  end
+end
+          </pre>
+          <pre class="prettyprint" data-lang="console">
+$ rake db:migrate
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+        <li><a href="http://guides.rubyonrails.org/routing.html#resources-on-the-web">Resources</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Rake_(software)">Rake</a></li>
+        <li><a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></li>
+        <li><a href="http://guides.rubyonrails.org/migrations.html">Migrations</a> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Saving data in the controller: </b>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+def create
+  @post = Post.new(post_params)
+ 
+  @post.save
+  redirect_to @post
+end
+ 
+private
+  def post_params
+    params.require(:post).permit(:title, :text)
+  end
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <p><b>Strong Parameters: </b></p>
+      <ul class="build">
+        <li>
+            Note that def post_params is private. 
+        </li>
+        <li>
+            This new approach prevents an attacker from setting the model's attributes by manipulating the hash passed to the model.
+        </li>
+      </ul>
+    </article>
+  </slide> 
+
+  <slide>
+    <hgroup>
+      <h2>Don't forget Rails Concepts</h2>
+    </hgroup>
+    <article class="smaller">
+      <ul>
+        <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+        <li><a href="http://guides.rubyonrails.org/routing.html#resources-on-the-web">Resources</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Rake_(software)">Rake</a></li>
+        <li><a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></li>
+        <li><a href="http://guides.rubyonrails.org/migrations.html">Migrations</a> </li>
+        <li><a href="http://weblog.rubyonrails.org/2012/3/21/strong-parameters/">StrongParameters</a> </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Showing posts: </b>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+def show
+  @post = Post.find(params[:id])
+end
+          </pre>
+        </li>
+        <li>
+          Now, create a new file app/views/posts/show.html.erb
+        </li>
+        <li>
+           <pre class="prettyprint" data-lang="erb">
+&lt;p>
+  &lt;strong>Title:&lt;/strong>
+  &lt;%= @post.title %>
+&lt;/p>
+ 
+&lt;p>
+  &lt;strong>Text:&lt;/strong>
+  &lt;%= @post.text %>
+&lt;/p>
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Listing all posts: </b>
+      <ul class="build">
+        <li>
+           <pre class="prettyprint" data-lang="ruby">
+def index
+  @posts = Post.all
+end
+          </pre>
+        </li>
+        <li>
+          And then finally a view for this action, located at app/views/posts/index.html.erb:
+           <pre class="prettyprint" data-lang="erb">
+&lt;h1>Listing posts&lt;/h1>
+&lt;table>
+  &lt;tr>
+    &lt;th>Title&lt;/th>
+    &lt;th>Text&lt;/th>
+  &lt;/tr>
+  &lt;% @posts.each do |post| %>
+    &lt;tr>
+      &lt;td>&lt;%= post.title %>&lt;/td>
+      &lt;td>&lt;%= post.text %>&lt;/td>
+    &lt;/tr>
+  &lt;% end %>
+&lt;/table>
+          </pre>
+        </li>
+      </ul>
+    </article>
+  </slide>  
+
+
+
   <slide class="fill nobackground" style="background-image: url(images/enfado.jpg)">
     <hgroup>
       <h2 class="white" style="text-align: right">Full Image (with Optional Header)</h2>
