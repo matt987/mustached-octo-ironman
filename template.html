@@ -737,39 +737,94 @@ def index
 end
           </pre>
         </li>
-        <li>
-          And then finally a view for this action, located at app/views/posts/index.html.erb:
-           <pre class="prettyprint" data-lang="erb">
-&lt;h1>Listing posts&lt;/h1>
-&lt;table>
-  &lt;tr>
-    &lt;th>Title&lt;/th>
-    &lt;th>Text&lt;/th>
-  &lt;/tr>
-  &lt;% @posts.each do |post| %>
-    &lt;tr>
-      &lt;td>&lt;%= post.title %>&lt;/td>
-      &lt;td>&lt;%= post.text %>&lt;/td>
-    &lt;/tr>
-  &lt;% end %>
-&lt;/table>
-          </pre>
-        </li>
+        <li>to be continued...</li>
       </ul>
     </article>
   </slide>  
 
-
-
-  <slide class="fill nobackground" style="background-image: url(images/enfado.jpg)">
+  <slide>
     <hgroup>
-      <h2 class="white" style="text-align: right">Full Image (with Optional Header)</h2>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
-    <p>DRY</p>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
+    <article>
+      <b>Listing all posts: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+      &lt;h1>Listing posts&lt;/h1>
+      &lt;table>
+        &lt;tr>
+          &lt;th>Title&lt;/th>
+          &lt;th>Text&lt;/th>
+        &lt;/tr>
+        &lt;% @posts.each do |post| %>
+          &lt;tr>
+            &lt;td>&lt;%= post.title %>&lt;/td>
+            &lt;td>&lt;%= post.text %>&lt;/td>
+          &lt;/tr>
+        &lt;% end %>
+      &lt;/table>
+                </pre>
+        </li>
 
+      </ul>
+    </article>
+  </slide>  
 
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Adding links: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;h1>Hello, Rails!&lt;/h1>
+&lt;%= link_to "My Blog", controller: "posts" %>
+&lt;%#= welcome index%>
+                </pre>
+        </li>
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;%= link_to 'New post', new_post_path %>
+&lt;%#= posts index%>
+                </pre>
+        </li>
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;%= link_to 'Back', posts_path %>
+&lt;%#= posts show%>
+                </pre>
+        </li>        
+      </ul>
+    </article>
+  </slide>  
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Adding some validations: </b>
+      <ul class="build">
+        <li>
+          Rails includes methods to help you validate the data that you send to models.
+        </li>
+        <li>
+                 <pre class="prettyprint" data-lang="ruby">
+class Post < ActiveRecord::Base
+  validates :title, presence: true,
+                    length: { minimum: 5 }
+end
+                </pre>
+        </li>      
+      </ul>
+    </article>
+  </slide>  
 
   <slide>
     <hgroup>
@@ -779,303 +834,205 @@ end
       <ul>
         <li><a href="http://en.wikipedia.org/wiki/Don't_repeat_yourself">DRY - "Don't Repeat Yourself":</a></li>
         <li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a></li>
+        <li><a href="http://guides.rubyonrails.org/generators.html">Generators</a></li>
+        <li><a href="http://guides.rubyonrails.org/action_controller_overview.html">Controllers</a></li>
+        <li><a href="http://guides.rubyonrails.org/routing.html">Routing</a></li>
+        <li>
+          <a href="http://guides.rubyonrails.org/layouts_and_rendering.html">Views</a>
+          <a href="http://guides.rubyonrails.org/form_helpers.html">[2]</a>
+        </li>
+        <li><a href="http://guides.rubyonrails.org/routing.html#resources-on-the-web">Resources</a></li>
+        <li><a href="http://en.wikipedia.org/wiki/Rake_(software)">Rake</a></li>
+        <li><a href="http://guides.rubyonrails.org/active_record_basics.html">ActiveRecord</a></li>
+        <li><a href="http://guides.rubyonrails.org/migrations.html">Migrations</a> </li>
+        <li><a href="http://weblog.rubyonrails.org/2012/3/21/strong-parameters/">StrongParameters</a> </li>
+        <li><a href="http://guides.rubyonrails.org/active_record_validations.html/">Validations</a> </li>        
       </ul>
     </article>
   </slide>
 
-  <slide hidden>
-    Hidden slides are left out of the presentation.
-  </slide>
-
   <slide>
     <hgroup>
-      <h2>Code Slide (with Subtitle Placeholder)</h2>
-      <h3>Subtitle Placeholder</h3>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
     <article>
-      <p>Press 'h' to highlight important sections of code (wrapped in <code>&lt;b&gt;</code>).</p>
-      <pre class="prettyprint" data-lang="javascript">
-&lt;script type='text/javascript'&gt;
-  // Say hello world until the user starts questioning
-  // the meaningfulness of their existence.
-  function helloWorld(world) {
-    <b>for (var i = 42; --i &gt;= 0;) {
-      alert('Hello ' + String(world));
-    }</b>
-  }
-&lt;/script&gt;
-</pre>
+      <b>Adding some validations: </b>
+      <ul class="build">
+        <li>
+          With the validation now in place, when you call @post.save on an invalid post, it will return false. If you open app/controllers/posts_controller.rb again, you'll notice that we don't check the result of calling @post.save inside the create action.
+        </li>
+        <li>
+                 <pre class="prettyprint" data-lang="ruby">
+def create
+  @post = Post.new(params[:post].permit(:title, :text))
+ 
+  if @post.save
+    redirect_to @post
+  else
+    render 'new'
+  end
+end
+                </pre>
+        </li>      
+      </ul>
     </article>
-  </slide>
+  </slide> 
 
   <slide>
     <hgroup>
-      <h2>Code Slide (Smaller Font)</h2>
-    </hgroup>
-    <article class="smaller">
-      <pre class="prettyprint" data-lang="javascript">
-// Say hello world until the user starts questioning
-// the meaningfulness of their existence.
-function helloWorld(world) {
-  for (var i = 42; --i &gt;= 0;) {
-    alert('Hello ' + String(world));
-  }
-}
-</pre>
-<pre class="prettyprint" data-lang="css">
-&lt;style&gt;
-  p { color: pink }
-  b { color: blue }
-&lt;/style&gt;
-</pre>
-<pre class="prettyprint" data-lang="html">
-&lt;!DOCTYPE html>
-&lt;html>
-&lt;head>
-  &lt;title>My Awesome Page&lt;/title>
-&lt;/head>
-&lt;body>
-  &lt;p&gt;Hello world&lt;/p&gt;
-&lt;body>
-&lt;/html>
-</pre>
-    </article>
-  </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>Point I wanted to make #1</li>
-          <li>Point I wanted to make #2</li>
-          <li>Point I wanted to make #3</li>
-          <li>Example <a href="#">link</a> in notes.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>Slide with Speaker Notes</h2>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
     <article>
-      <p>Press 'p' to toggle speaker notes.</p>
+      <b>Showing errors: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+  &lt;% if @post.errors.any? %>
+  &lt;div id="errorExplanation">
+    &lt;h2>&lt;%= pluralize(@post.errors.count, "error") %> prohibited
+      this post from being saved:&lt;/h2>
+    &lt;ul>
+    &lt;% @post.errors.full_messages.each do |msg| %>
+      &lt;li>&lt;%= msg %>&lt;/li>
+    &lt;% end %>
+    &lt;/ul>
+  &lt;/div>
+  &lt;% end %>
+                </pre>
+      </li> 
+      <li>
+        <i>pluralize</i> is a rails helper that takes a number and a string as its arguments. If the number is greater than one, the string will be automatically pluralized.
+      </li>      
+
+      </ul>
     </article>
-  </slide>
+  </slide>  
 
   <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>See this amazing link: <a href="http://www.google.com">link</a>.</li>
-        </ul>
-        <p><b>Remember to say this tag line!</b></p>
-      </section>
-    </aside>
     <hgroup>
-      <h2>Presenter Mode</h2>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
     <article>
-      <p>Add <code><a href="?presentme=true" target="_self">?presentme=true</a></code> to the URL to enabled presenter mode.
-      This setting is sticky, meaning refreshing the page will persist presenter
-      mode.</p>
-      <p>Hit <code><a href="?presentme=false" target="_self">?presentme=false</a></code> to disable presenter mode.</p>
+      <b>Updating post: </b>
+      <ul class="build">
+        <li>
+          We've covered the "CR" part of CRUD. Now let's focus on the "U" part, updating posts.
+        </li>
+        <li>
+                 <pre class="prettyprint" data-lang="ruby">
+def edit
+  @post = Post.find(params[:id])
+end
+                </pre>
+        </li>  
+        <li>
+          to be continued ...
+        </li>    
+      </ul>
     </article>
-  </slide>
+  </slide> 
 
-  <slide>
+    <slide>
     <hgroup>
-      <h2>Slide with Image</h2>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
     <article>
-      <img src="images/chart.png" class="reflect" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
+      <b>Updating post: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;%= form_for :post, url: post_path(@post.id) },
+method: :patch do |f| %>
+  &lt;% if @post.errors.any? %>
+  &lt;div id="errorExplanation">
+    &lt;h2>&lt;%= pluralize(@post.errors.count, "error") %> &lt;/h2>
+    &lt;ul>
+    &lt;% @post.errors.full_messages.each do |msg| %>
+      &lt;li>&lt;%= msg %>&lt;/li>
+    &lt;% end %>
+    &lt;/ul>
+  &lt;/div>
+  &lt;% end %>
+  &lt;p> &lt;%= f.label :title %>&lt;br> &lt;%= f.text_field :title %> &lt;/p>
+  &lt;p> &lt;%= f.label :text %>&lt;br> &lt;%= f.text_area :text %> &lt;/p>
+  &lt;p> &lt;%= f.submit %>  &lt;/p>
+&lt;% end %>
+&lt;%= link_to 'Back', posts_path %>
+                </pre>
+        </li>     
+      </ul>
     </article>
-  </slide>
+  </slide> 
 
   <slide>
     <hgroup>
-      <h2>Slide with Image (Centered horz/vert)</h2>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
     </hgroup>
+    <article>
+      <b>Listing post: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;table>
+  &lt;tr>
+    &lt;th>Title&lt;/th>
+    &lt;th>Text&lt;/th>
+    &lt;th>&lt;/th>
+    &lt;th>&lt;/th>
+  &lt;/tr>
+ 
+&lt;% @posts.each do |post| %>
+  &lt;tr>
+    &lt;td>&lt;%= post.title %>&lt;/td>
+    &lt;td>&lt;%= post.text %>&lt;/td>
+    &lt;td>&lt;%= link_to 'Show', post_path %>&lt;/td>
+    &lt;td>&lt;%= link_to 'Edit', edit_post_path(post) %>&lt;/td>
+  &lt;/tr>
+&lt;% end %>
+</table>
+                </pre>
+        </li>     
+      </ul>
+    </article>
+  </slide>   
+
+  <slide>
+    <hgroup>
+      <h2>Hello, JOINEA!</h2>
+      <h3>Blog Application</h3>
+    </hgroup>
+    <article>
+      <b>Deleting posts: </b>
+      <ul class="build">
+        <li>
+                 <pre class="prettyprint" data-lang="ruby">
+def destroy
+  @post = Post.find(params[:id])
+  @post.destroy
+ 
+  redirect_to posts_path
+end
+                </pre>
+      </li>   
+        <li>
+                 <pre class="prettyprint" data-lang="erb">
+&lt;%= link_to 'Destroy', post_path(post),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+                </pre>
+      </li>         
+
+      </ul>
+    </article>
+  </slide>  
+
+  <slide class="dark nobackground">
     <article class="flexbox vcenter">
-      <img src="images/barchart.png" alt="Description" title="Description">
-      <footer class="source">source: place source info here</footer>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option A (Smaller Text)</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article class="smaller">
-      <table>
-        <tr>
-          <th></th><th>Column 1</th><th>Column 2</th><th>Column 3</th><th>Column 4</th>
-        </tr>
-        <tr>
-          <td>Row 1</td><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 2</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 3</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 4</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <td>Row 5</td><td>placeholder</td><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Table Option B</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-    <article>
-      <table class="rows">
-        <tr>
-          <th>Header 1</th><td>placeholder</td><td class="highlight">placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 2</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 3</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 4</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-        <tr>
-          <th>Header 5</th><td>placeholder</td><td>placeholder</td><td>placeholder</td>
-        </tr>
-      </table>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide Styles</h2>
-    </hgroup>
-    <article class="smaller">
-      <div class="columns-2">
-        <ul>
-          <li class="red">class="red"</li>
-          <li class="red2">class="red2"</li>
-          <li class="red3">class="red3"</li>
-          <li class="blue">class="blue"</li>
-          <li class="blue2">class="blue2"</li>
-          <li class="blue3">class="blue3"</li>
-          <li class="green">class="green"</li>
-          <li class="green2">class="green2"</li>
-        </ul>
-        <ul>
-          <li class="green3">class="green3"</li>
-          <li class="yellow">class="yellow"</li>
-          <li class="yellow2">class="yellow2"</li>
-          <li class="yellow3">class="yellow3"</li>
-          <li class="gray">class="gray"</li>
-          <li class="gray2">class="gray2"</li>
-          <li class="gray3">class="gray3"</li>
-          <li class="gray4">class="gray4"</li>
-        </ul>
-      </div>
-      <div class="centered" style="margin-top:2em">
-        I am centered text with a <button>Button</button> and <button disabled>Disabled</button> button.
-      </div>
-    </article>
-  </slide>
-
-  <slide class="segue dark nobackground">
-    <aside class="gdbar"><img src="images/google_developers_icon_128.png"></aside>
-    <hgroup class="auto-fadein">
-      <h2>Segue Slide</h2>
-      <h3>Subtitle Placeholder</h3>
-    </hgroup>
-  </slide>
-
-  <slide class="fill nobackground" style="background-image: url(images/enfadado.jpg)">
-    <hgroup>
-      <h2 class="white">Full Image (with Optional Header)</h2>
-    </hgroup>
-    <footer class="source white">www.flickr.com/photos/25797459@N06/5438799763/</footer>
-  </slide>
-
-  <slide class="segue dark quote nobackground">
-    <aside class="gdbar right bottom"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <q>
-        This is an example of quote text.
-      </q>
-      <div class="author">
-        Name<br>
-        Company
-      </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>Slide with Iframe</h2>
-    </hgroup>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide>
-    <article>
-      <iframe data-src="http://www.google.com/doodle4google/resources/history.html"></iframe>
-    </article>
-  </slide>
-
-  <slide class="thank-you-slide segue nobackground">
-    <aside class="gdbar right"><img src="images/google_developers_icon_128.png"></aside>
-    <article class="flexbox vleft auto-fadein">
-      <h2>&lt;Thank You!&gt;</h2>
-      <p>Important contact information goes here.</p>
-    </article>
-    <p class="auto-fadein" data-config-contact>
-      <!-- populated from slide_config.json -->
-    </p>
-  </slide>
-
-  <slide class="logoslide dark nobackground">
-    <article class="flexbox vcenter">
-      <span><img src="images/google_developers_logo_white.png"></span>
+      <span><h1>Muchas Gracias!!!</h1></span>
     </article>
   </slide>
 
